@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>MultiPostMaestro - Multi-Platform Video Post Creator & Manager</title>
+    <meta name="title" content="MultiPostMaestro - Multi-Platform Video Post Creator & Manager">
+    <meta name="description" content="Create professional video posts for YouTube, Instagram, TikTok, Facebook, Rumble & more. Free video post creator with ad management, SEO optimization & multi-platform support.">
+    <meta name="keywords" content="video post creator, multi-platform videos, YouTube embed, Instagram videos, TikTok creator, Facebook videos, Rumble videos, video content creator, social media tool, video ad manager, SEO video posts, blogger video tool, content creation platform">
+    <meta name="author" content="MultiPostMaestro">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vidforge.studio/">
+    <meta property="og:title" content="MultiPostMaestro - Multi-Platform Video Post Creator">
+    <meta property="og:description" content="Create professional video posts for YouTube, Instagram, TikTok, Facebook, Rumble & more platforms with ease.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/4f46e5/ffffff?text=VidForge+Studio">
+    <meta property="og:site_name" content="MultiPostMaestro">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vidforge.studio/">
+    <meta name="twitter:title" content="MultiPostMaestro - Multi-Platform Video Post Creator">
+    <meta name="twitter:description" content="Create professional video posts for YouTube, Instagram, TikTok, Facebook, Rumble & more.">
+    <meta name="twitter:image" content="https://via.placeholder.com/1200x630/4f46e5/ffffff?text=VidForge+Studio">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vidforge.studio/">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --error: #ef4444;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 20px;
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+        }
+
+        .logo-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 11px;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-icon {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-icon:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Info Banner */
+        .info-banner {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-banner-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .info-banner-text {
+            flex: 1;
+        }
+
+        .info-banner-text h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .info-banner-text p {
+            font-size: 12px;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        /* Platform Tags */
+        .platform-strip {
+            background: white;
+            padding: 10px 0;
+            margin-bottom: 16px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .platform-list {
+            display: flex;
+            gap: 6px;
+            padding: 0 16px;
+            min-width: max-content;
+        }
+
+        .platform-chip {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .chip-yt { background: #ff000015; color: #ff0000; }
+        .chip-ig { background: #e1306c15; color: #e1306c; }
+        .chip-tk { background: #00f2ea15; color: #00a8a8; }
+        .chip-fb { background: #1877f215; color: #1877f2; }
+        .chip-tw { background: #1da1f215; color: #1da1f2; }
+        .chip-ru { background: #85c74215; color: #5a8f2e; }
+        .chip-vm { background: #1ab7ea15; color: #1ab7ea; }
+        .chip-li { background: #0077b515; color: #0077b5; }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .tab {
+            padding: 10px 16px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.2s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tab:hover {
+            background: var(--bg);
+        }
+
+        .tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .collapse-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 4px;
+            transition: transform 0.2s;
+        }
+
+        .collapse-btn.collapsed {
+            transform: rotate(-90deg);
+        }
+
+        .card-body {
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .card-body.collapsed {
+            max-height: 0 !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+
+        .form-label.required::after {
+            content: '*';
+            color: var(--error);
+            margin-left: 4px;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+            background: var(--surface);
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+        }
+
+        .form-textarea {
+            min-height: 70px;
+            resize: vertical;
+        }
+
+        .form-hint {
+            font-size: 11px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* Upload Zone */
+        .upload-zone {
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--bg);
+        }
+
+        .upload-zone:hover {
+            border-color: var(--primary);
+            background: rgba(79,70,229,0.02);
+        }
+
+        .upload-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .upload-text {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .upload-hint {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-success {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-warning {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        .btn-sm {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        /* Item List */
+        .item-list {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 12px;
+        }
+
+        .item {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background: var(--bg);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            align-items: center;
+        }
+
+        .item-thumb {
+            width: 50px;
+            height: 50px;
+            border-radius: 6px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .item-number {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .item-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .item-input {
+            width: 100%;
+            padding: 6px 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .item-meta {
+            font-size: 10px;
+            color: var(--text-light);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .item-remove {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--error);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            background: var(--primary);
+            color: white;
+        }
+
+        .badge-secondary {
+            background: var(--text-light);
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 768px) {
+            .grid-md-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-md-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Saved Posts */
+        .saved-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: var(--bg);
+            border-radius: 6px;
+            margin-bottom: 6px;
+        }
+
+        .saved-item-text {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* Ad Slots */
+        .ad-slot {
+            margin-bottom: 10px;
+        }
+
+        .ad-slot-header {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .ad-textarea {
+            min-height: 80px;
+            font-size: 12px;
+            font-family: monospace;
+        }
+
+        /* Footer */
+        .footer {
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            font-size: 12px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--text);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+            max-width: 300px;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            background: var(--secondary);
+        }
+
+        .toast.error {
+            background: var(--error);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 40px;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+        }
+
+        .modal-close:hover {
+            background: var(--bg);
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .modal-body h3 {
+            font-size: 16px;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        .modal-body p, .modal-body ul {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .modal-body ul {
+            padding-left: 20px;
+        }
+
+        .modal-body li {
+            margin-bottom: 6px;
+        }
+
+        /* Guide Steps */
+        .guide-step {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+
+        .step-content p {
+            font-size: 13px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Redirect Overlay */
+        .redirect-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .redirect-overlay.show {
+            display: flex;
+        }
+
+        .redirect-content {
+            text-align: center;
+            color: white;
+        }
+
+        .redirect-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .redirect-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .redirect-timer {
+            font-size: 48px;
+            font-weight: 900;
+            color: #10b981;
+            margin: 20px 0;
+        }
+
+        .redirect-message {
+            font-size: 16px;
+            color: #cbd5e1;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .logo-text h1 {
+                font-size: 18px;
+            }
+
+            .logo-text p {
+                font-size: 10px;
+            }
+
+            .header-actions {
+                gap: 6px;
+            }
+
+            .btn-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+
+            .redirect-title {
+                font-size: 20px;
+            }
+
+            .redirect-timer {
+                font-size: 36px;
+            }
+
+            .redirect-message {
+                font-size: 14px;
+            }
+        }
+
+        /* Utility Classes */
+        .mt-2 { margin-top: 8px; }
+        .mb-2 { margin-bottom: 8px; }
+        .text-center { text-align: center; }
+        .text-muted { color: var(--text-light); }
+        .fw-bold { font-weight: 700; }
+        .d-none { display: none; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">🎬</div>
+                <div class="logo-text">
+                    <h1>MultiPostMaestro</h1>
+                    <p>Multi-Platform Video Creator</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-icon" onclick="showModal('guide')" title="User Guide">📖</button>
+                <button class="btn-icon" onclick="showModal('about')" title="About">ℹ️</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Info Banner -->
+        <div class="info-banner">
+            <div class="info-banner-icon">💡</div>
+            <div class="info-banner-text">
+                <h3>How MultiPostMaestro Works</h3>
+                <p><strong>Tool Owner Earning (You):</strong> When users create posts with this tool, they'll see a brief redirect to support the tool development.<br>
+                <strong>End User Earning (Your Users):</strong> The ad codes below are for YOUR posts - replace demo ads with your own codes for YOUR monetization!</p>
+            </div>
+        </div>
+
+        <!-- Platform Strip -->
+        <div class="platform-strip">
+            <div class="platform-list">
+                <span class="platform-chip chip-yt">📺 YouTube</span>
+                <span class="platform-chip chip-ig">📷 Instagram</span>
+                <span class="platform-chip chip-tk">🎵 TikTok</span>
+                <span class="platform-chip chip-fb">👥 Facebook</span>
+                <span class="platform-chip chip-tw">🐦 Twitter</span>
+                <span class="platform-chip chip-ru">🎬 Rumble</span>
+                <span class="platform-chip chip-vm">📹 Vimeo</span>
+                <span class="platform-chip chip-li">💼 LinkedIn</span>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('create')">
+                <span>✏️</span> Create
+            </div>
+            <div class="tab" onclick="switchTab('ads')">
+                <span>💰</span> Ads
+            </div>
+            <div class="tab" onclick="switchTab('posts')">
+                <span>📚</span> Posts
+            </div>
+            <div class="tab" onclick="switchTab('export')">
+                <span>⬇️</span> Export
+            </div>
+        </div>
+
+        <!-- Tab: Create -->
+        <div id="tab-create" class="tab-content active">
+            <!-- Post Details -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">📝 Post Details</div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="form-label">Post Title</label>
+                        <input type="text" class="form-input" id="postTitle" placeholder="Enter post title (optional)">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label required">Your Redirect URL (For Your Monetization)</label>
+                        <input type="url" class="form-input" id="redirectUrl" placeholder="https://your-website.com" value="">
+                        <div class="form-hint">When viewers unlock videos/images in YOUR posts, they'll visit this URL first (your earning opportunity)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Images -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        📸 Images
+                        <span class="badge badge-secondary" id="imageCount">0</span>
+                    </div>
+                    <button class="collapse-btn" onclick="toggleCollapse(this)">▼</button>
+                </div>
+                <div class="card-body">
+                    <div class="upload-zone" onclick="document.getElementById('imageInput').click()">
+                        <div class="upload-icon">📸</div>
+                        <div class="upload-text">Upload Images</div>
+                        <div class="upload-hint">Click to browse (optional)</div>
+                        <input type="file" id="imageInput" multiple accept="image/*" style="display:none">
+                    </div>
+                    <div id="imageList" class="item-list mt-2"></div>
+                </div>
+            </div>
+
+            <!-- Videos -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">🎥 Add Video</div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="form-label required">Video URL</label>
+                        <input type="url" class="form-input" id="videoUrl" placeholder="Paste video URL here">
+                        <div class="form-hint">Supports: YouTube, Instagram, TikTok, Facebook, Twitter, Rumble, Vimeo, Dailymotion, Streamable, LinkedIn, Twitch</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Video Thumbnail</label>
+                        <div class="upload-zone" onclick="document.getElementById('thumbInput').click()">
+                            <div class="upload-icon">🖼️</div>
+                            <div class="upload-text">Upload Thumbnail</div>
+                            <div class="upload-hint" id="thumbStatus">Optional</div>
+                            <input type="file" id="thumbInput" accept="image/*" style="display:none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-md-2">
+                        <div class="form-group">
+                            <label class="form-label">Video Title</label>
+                            <input type="text" class="form-input" id="videoTitle" placeholder="Optional">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Video Description</label>
+                            <input type="text" class="form-input" id="videoDesc" placeholder="Optional">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" onclick="addVideo()">
+                        <span>➕</span> Add Video
+                    </button>
+
+                    <div id="videoList" class="item-list mt-2"></div>
+                </div>
+            </div>
+
+            <!-- Save Post -->
+            <div style="background: #dbeafe; border: 2px solid #3b82f6; border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                <p style="font-size: 11px; color: #1e40af; margin: 0; line-height: 1.5;">
+                    <strong>ℹ️ What happens when you click "Save Post":</strong> A brief redirect will open (tool owner's earning), then your post will be saved. This is how the tool owner earns from providing this free tool to you!
+                </p>
+            </div>
+            <button class="btn btn-success btn-block" onclick="savePostWithRedirect()">
+                <span>💾</span> Save Post
+            </button>
+        </div>
+
+        <!-- Tab: Ads -->
+        <div id="tab-ads" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">💰 Your Ad Codes (For Your Generated Posts)</div>
+                </div>
+                <div class="card-body">
+                    <div style="background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 12px; margin-bottom: 16px;">
+                        <p style="font-size: 12px; color: #92400e; margin: 0; line-height: 1.5;">
+                            <strong>⚠️ Important:</strong> These ad codes will appear in YOUR generated posts for YOUR monetization. Replace demo codes with your own ad network codes (AdSense, PropellerAds, etc.) to earn from the posts you create!
+                        </p>
+                    </div>
+                    <p class="text-muted mb-2" style="font-size: 12px;">Configure up to 4 ad slots for your posts. Demo ads are provided as examples.</p>
+
+                    <div class="ad-slot">
+                        <div class="ad-slot-header">🔝 Slot 1 - Top Banner</div>
+                        <textarea class="form-textarea ad-textarea" id="adSlot1" placeholder="Paste your ad code here..."><script >
+  atOptions = {
+    'key' : '85c0fa5873702d2c8ef0f8de00c332fe',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script  src="//www.highperformanceformat.com/85c0fa5873702d2c8ef0f8de00c332fe/invoke.js"></script></textarea>
+                    </div>
+
+                    <div class="ad-slot">
+                        <div class="ad-slot-header">📌 Slot 2 - Sidebar</div>
+                        <textarea class="form-textarea ad-textarea" id="adSlot2" placeholder="Paste your ad code here..."><!-- Sidebar Ad Code Here -->
+<script  src="//pl28234550.effectivegatecpm.com/32/9d/76/329d76259bdb2802b81b9ad836f4e4ff.js"></script></textarea>
+                    </div>
+
+                    <div class="ad-slot">
+                        <div class="ad-slot-header">📄 Slot 3 - In-Content</div>
+                        <textarea class="form-textarea ad-textarea" id="adSlot3" placeholder="Paste your ad code here..."><!-- In-Content Ad Code Here -->
+<script  src="//pl28234550.effectivegatecpm.com/32/9d/76/329d76259bdb2802b81b9ad836f4e4ff.js"></script></textarea>
+                    </div>
+
+                    <div class="ad-slot">
+                        <div class="ad-slot-header">⬇️ Slot 4 - Bottom Banner</div>
+                        <textarea class="form-textarea ad-textarea" id="adSlot4" placeholder="Paste your ad code here..."><script >
+  atOptions = {
+    'key' : '85c0fa5873702d2c8ef0f8de00c332fe',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script  src="//www.highperformanceformat.com/85c0fa5873702d2c8ef0f8de00c332fe/invoke.js"></script></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Posts -->
+        <div id="tab-posts" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        📚 Saved Posts
+                        <span class="badge badge-secondary" id="postsCount">0</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="savedPostsList">
+                        <p class="text-center text-muted">No saved posts yet. Create and save a post first!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Export -->
+        <div id="tab-export" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">⬇️ Export Options</div>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted mb-2" style="font-size: 12px;">Export your posts as HTML file or copy to clipboard</p>
+
+                    <div class="grid">
+                        <button class="btn btn-primary btn-block" onclick="previewWithRedirect()">
+                            <span>👁️</span> Preview
+                        </button>
+                        <button class="btn btn-success btn-block" onclick="downloadWithRedirect()">
+                            <span>⬇️</span> Download HTML
+                        </button>
+                        <button class="btn btn-outline btn-block" onclick="copyHTMLWithRedirect()">
+                            <span>📋</span> Copy HTML
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">👀 Preview</div>
+                    <button class="collapse-btn" onclick="toggleCollapse(this)">▼</button>
+                </div>
+                <div class="card-body" id="previewArea">
+                    <p class="text-center text-muted">Click "Preview" to see your posts</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#" class="footer-link" onclick="showModal('about'); return false;">About</a>
+                <a href="#" class="footer-link" onclick="showModal('privacy'); return false;">Privacy</a>
+                <a href="#" class="footer-link" onclick="showModal('terms'); return false;">Terms</a>
+                <a href="#" class="footer-link" onclick="showModal('contact'); return false;">Contact</a>
+            </div>
+            <div class="footer-text">
+                © 2024 MultiPostMaestro. All rights reserved.
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Redirect Overlay -->
+    <div id="redirectOverlay" class="redirect-overlay">
+        <div class="redirect-content">
+            <div class="redirect-icon">🚀</div>
+            <div class="redirect-title">Please Wait...</div>
+            <div class="redirect-timer" id="redirectTimer">5</div>
+            <div class="redirect-message">Redirecting you in <span id="redirectCountText">5</span> seconds...</div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">Modal</div>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        let images = [];
+        let videos = [];
+        let savedPosts = [];
+        let currentThumb = null;
+        const REDIRECT_URL = 'https://kmgirlf.blogspot.com';
+        const REDIRECT_DELAY = 5; // 5 seconds
+
+        // Redirect function
+        function showRedirectAndExecute(callback) {
+            const overlay = document.getElementById('redirectOverlay');
+            const timerEl = document.getElementById('redirectTimer');
+            const countText = document.getElementById('redirectCountText');
+
+            overlay.classList.add('show');
+            let count = REDIRECT_DELAY;
+            timerEl.textContent = count;
+            countText.textContent = count;
+
+            // Open redirect URL in new tab
+            const redirectWindow = window.open(REDIRECT_URL, '_blank');
+
+            if (!redirectWindow) {
+                showToast('Please allow popups to continue', 'error');
+                overlay.classList.remove('show');
+                return;
+            }
+
+            const interval = setInterval(() => {
+                count--;
+                timerEl.textContent = count;
+                countText.textContent = count;
+
+                if (count <= 0) {
+                    clearInterval(interval);
+                    overlay.classList.remove('show');
+                    if (callback) callback();
+                }
+            }, 1000);
+        }
+
+        // Tab Switching
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+            event.target.closest('.tab').classList.add('active');
+            document.getElementById('tab-' + tabName).classList.add('active');
+        }
+
+        // Collapse Toggle
+        function toggleCollapse(btn) {
+            const body = btn.closest('.card').querySelector('.card-body');
+            btn.classList.toggle('collapsed');
+            body.classList.toggle('collapsed');
+
+            if (!body.classList.contains('collapsed')) {
+                body.style.maxHeight = body.scrollHeight + 'px';
+            }
+        }
+
+        // Image Upload
+        document.getElementById('imageInput').addEventListener('change', function(e) {
+            Array.from(e.target.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    images.push({ src: event.target.result, title: '' });
+                    renderImages();
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+
+        // Thumbnail Upload
+        document.getElementById('thumbInput').addEventListener('change', function(e) {
+            if (e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    currentThumb = event.target.result;
+                    document.getElementById('thumbStatus').textContent = '✓ Selected';
+                };
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+
+        function renderImages() {
+            document.getElementById('imageCount').textContent = images.length;
+            const list = document.getElementById('imageList');
+            list.innerHTML = images.map((img, i) => `
+                <div class="item">
+                    <div class="item-number">${i + 1}</div>
+                    <img src="${img.src}" class="item-thumb">
+                    <div class="item-content">
+                        <input type="text" class="item-input" placeholder="Image title..." value="${img.title}" onchange="images[${i}].title=this.value">
+                    </div>
+                    <button class="item-remove" onclick="removeImage(${i})">×</button>
+                </div>
+            `).join('');
+        }
+
+        function removeImage(i) {
+            images.splice(i, 1);
+            renderImages();
+        }
+
+        function addVideo() {
+            const url = document.getElementById('videoUrl').value.trim();
+            if (!url) {
+                showToast('Please enter video URL', 'error');
+                return;
+            }
+
+            const embedData = getEmbedUrl(url);
+            if (!embedData) {
+                showToast('Invalid video URL', 'error');
+                return;
+            }
+
+            videos.push({
+                url,
+                embedUrl: embedData.embedUrl,
+                platform: embedData.platform,
+                title: document.getElementById('videoTitle').value.trim(),
+                desc: document.getElementById('videoDesc').value.trim(),
+                thumb: currentThumb
+            });
+
+            document.getElementById('videoUrl').value = '';
+            document.getElementById('videoTitle').value = '';
+            document.getElementById('videoDesc').value = '';
+            currentThumb = null;
+            document.getElementById('thumbStatus').textContent = 'Optional';
+
+            renderVideos();
+            showToast(`${embedData.platform} video added`, 'success');
+        }
+
+        function getEmbedUrl(url) {
+            // YouTube
+            if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                let videoId = null;
+                if (url.includes('youtube.com/watch')) {
+                    const match = url.match(/[?&]v=([^&]+)/);
+                    videoId = match ? match[1] : null;
+                } else if (url.includes('youtu.be/')) {
+                    const match = url.match(/youtu\.be\/([^?&]+)/);
+                    videoId = match ? match[1] : null;
+                }
+                return videoId ? { embedUrl: `https://www.youtube.com/embed/${videoId}`, platform: 'YouTube' } : null;
+            }
+
+            // Instagram
+            if (url.includes('instagram.com')) {
+                const match = url.match(/instagram\.com\/(p|reel|tv)\/([A-Za-z0-9_-]+)/);
+                if (match) return { embedUrl: `https://www.instagram.com/p/${match[2]}/embed/`, platform: 'Instagram' };
+            }
+
+            // TikTok
+            if (url.includes('tiktok.com')) {
+                const match = url.match(/tiktok\.com\/@[^/]+\/video\/(\d+)/);
+                if (match) return { embedUrl: `https://www.tiktok.com/embed/v2/${match[1]}`, platform: 'TikTok' };
+            }
+
+            // Facebook
+            if (url.includes('facebook.com') || url.includes('fb.watch')) {
+                return { embedUrl: `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false`, platform: 'Facebook' };
+            }
+
+            // Twitter
+            if (url.includes('twitter.com') || url.includes('x.com')) {
+                const match = url.match(/status\/(\d+)/);
+                if (match) return { embedUrl: `https://platform.twitter.com/embed/Tweet.html?id=${match[1]}`, platform: 'Twitter' };
+            }
+
+            // Rumble
+            if (url.includes('rumble.com')) {
+                const match = url.match(/rumble\.com\/([a-zA-Z0-9_-]+)/);
+                if (match) return { embedUrl: `https://rumble.com/embed/${match[1]}/`, platform: 'Rumble' };
+            }
+
+            // Vimeo
+            if (url.includes('vimeo.com')) {
+                const match = url.match(/vimeo\.com\/(\d+)/);
+                if (match) return { embedUrl: `https://player.vimeo.com/video/${match[1]}`, platform: 'Vimeo' };
+            }
+
+            // Dailymotion
+            if (url.includes('dailymotion.com')) {
+                const match = url.match(/video\/([a-zA-Z0-9]+)/);
+                if (match) return { embedUrl: `https://geo.dailymotion.com/player.html?video=${match[1]}`, platform: 'Dailymotion' };
+            }
+
+            // Streamable
+            if (url.includes('streamable.com')) {
+                const match = url.match(/streamable\.com\/([a-zA-Z0-9]+)/);
+                if (match) return { embedUrl: `https://streamable.com/e/${match[1]}`, platform: 'Streamable' };
+            }
+
+            // LinkedIn
+            if (url.includes('linkedin.com')) {
+                return { embedUrl: `https://www.linkedin.com/embed/feed/update/${encodeURIComponent(url)}`, platform: 'LinkedIn' };
+            }
+
+            // Twitch
+            if (url.includes('twitch.tv')) {
+                const match = url.match(/twitch\.tv\/videos\/(\d+)/);
+                if (match) return { embedUrl: `https://player.twitch.tv/?video=${match[1]}`, platform: 'Twitch' };
+            }
+
+            return null;
+        }
+
+        function renderVideos() {
+            const list = document.getElementById('videoList');
+            list.innerHTML = videos.map((v, i) => `
+                <div class="item">
+                    <div class="item-number">🎥</div>
+                    ${v.thumb ? `<img src="${v.thumb}" class="item-thumb">` : ''}
+                    <div class="item-content">
+                        <input type="text" class="item-input" placeholder="Title..." value="${v.title}" onchange="videos[${i}].title=this.value">
+                        <div class="item-meta">${v.platform} • ${v.url.substring(0, 40)}...</div>
+                    </div>
+                    <button class="item-remove" onclick="removeVideo(${i})">×</button>
+                </div>
+            `).join('');
+        }
+
+        function removeVideo(i) {
+            videos.splice(i, 1);
+            renderVideos();
+        }
+
+        function savePostWithRedirect() {
+            showRedirectAndExecute(() => {
+                savePost();
+            });
+        }
+
+        function savePost() {
+            const redirectUrl = document.getElementById('redirectUrl').value.trim();
+            if (!redirectUrl) {
+                showToast('Redirect URL required', 'error');
+                return;
+            }
+            if (videos.length === 0) {
+                showToast('Add at least one video', 'error');
+                return;
+            }
+
+            savedPosts.push({
+                title: document.getElementById('postTitle').value.trim(),
+                redirectUrl,
+                images: [...images],
+                videos: [...videos]
+            });
+
+            document.getElementById('postTitle').value = '';
+            images = [];
+            videos = [];
+            renderImages();
+            renderVideos();
+            renderSavedPosts();
+
+            showToast('Post saved successfully!', 'success');
+            switchTab('posts');
+        }
+
+        function renderSavedPosts() {
+            document.getElementById('postsCount').textContent = savedPosts.length;
+            const list = document.getElementById('savedPostsList');
+
+            if (savedPosts.length === 0) {
+                list.innerHTML = '<p class="text-center text-muted">No saved posts yet</p>';
+                return;
+            }
+
+            list.innerHTML = savedPosts.map((p, i) => `
+                <div class="saved-item">
+                    <span class="saved-item-text">${i + 1}. ${p.title || 'Post ' + (i + 1)}</span>
+                    <button class="btn btn-sm item-remove" onclick="removePost(${i})">×</button>
+                </div>
+            `).join('');
+        }
+
+        function removePost(i) {
+            savedPosts.splice(i, 1);
+            renderSavedPosts();
+        }
+
+        function generateHTML() {
+            let html = '';
+
+            const ad1 = document.getElementById('adSlot1').value.trim();
+            const ad2 = document.getElementById('adSlot2').value.trim();
+            const ad3 = document.getElementById('adSlot3').value.trim();
+            const ad4 = document.getElementById('adSlot4').value.trim();
+
+            if (ad1) html += `<div class="ad-container">\n${ad1}\n</div>\n\n`;
+
+            savedPosts.forEach((post, idx) => {
+                let firstImg = post.videos[0]?.thumb || post.images[0]?.src;
+
+                if (firstImg) {
+                    html += `<div class="featured-img"><img src="${firstImg}" alt="Featured"></div>\n\n`;
+                }
+
+                if (post.title) {
+                    html += `<h1>${post.title}</h1>\n\n`;
+                }
+
+                post.videos.forEach((v, i) => {
+                    const id = `v${Date.now()}${idx}${i}`;
+                    html += `<div class="video-section">
+    <div class="video-container">
+        <div class="video-wrapper">
+            <iframe id="${id}" src="${v.embedUrl}" allowfullscreen></iframe>
+            ${v.thumb ? `<img src="${v.thumb}" class="video-thumb" id="${id}-thumb">` : ''}
+            <div class="video-overlay" id="${id}-overlay" onclick="unlock('${id}','${post.redirectUrl}')">
+                <div class="overlay-text" id="${id}-msg">🎬 Click to Watch</div>
+                <div class="overlay-timer" id="${id}-timer" style="display:none">7</div>
+            </div>
+        </div>
+    </div>
+    ${v.title || v.desc ? `<div class="video-info">
+        ${v.title ? `<div class="video-title">${v.title}</div>` : ''}
+        ${v.desc ? `<div class="video-desc">${v.desc}</div>` : ''}
+    </div>` : ''}
+</div>\n\n`;
+                });
+
+                if (post.images.length > 0) {
+                    html += '<div class="gallery">\n';
+                    post.images.forEach(img => {
+                        html += `<a href="${post.redirectUrl}" target="_blank" class="gallery-item">
+    <img src="${img.src}" alt="${img.title || 'Image'}">
+    ${img.title ? `<div class="gallery-title">${img.title}</div>` : ''}
+</a>\n`;
+                    });
+                    html += '</div>\n\n';
+                }
+
+                if (ad3 && idx < savedPosts.length - 1) {
+                    html += `<div class="ad-container">\n${ad3}\n</div>\n\n`;
+                }
+            });
+
+            if (ad4) html += `<div class="ad-container">\n${ad4}\n</div>`;
+
+            return html;
+        }
+
+        function getFinalHTML() {
+            return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>${savedPosts[0]?.title || 'Video Posts'}</title>
+<meta name="description" content="Watch amazing videos from multiple platforms">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;max-width:900px;margin:0 auto;padding:16px;background:#f8f9fa;line-height:1.6}
+.featured-img{margin-bottom:20px}
+.featured-img img{width:100%;max-width:100%;height:auto;border-radius:12px}
+h1{font-size:1.8rem;margin-bottom:20px;color:#1e293b}
+.video-section{margin-bottom:30px}
+.video-container{background:#000;border-radius:12px;overflow:hidden;position:relative}
+.video-wrapper{position:relative;padding-bottom:56.25%;height:0}
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-thumb{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.video-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;cursor:pointer}
+.video-overlay.hidden{display:none}
+.overlay-text{color:#fff;font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.overlay-timer{color:#fbbf24;font-size:3rem;font-weight:900}
+.video-info{padding:12px 0}
+.video-title{font-weight:700;margin-bottom:6px}
+.video-desc{color:#64748b;font-size:.9rem}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:30px}
+.gallery-item{text-decoration:none;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);transition:transform .2s}
+.gallery-item:hover{transform:translateY(-4px)}
+.gallery-item img{width:100%;height:180px;object-fit:cover;display:block}
+.gallery-title{padding:12px;background:#fff;font-weight:600;color:#1e293b;text-align:center}
+.ad-container{margin:20px 0;padding:16px;background:#fff;border-radius:10px;text-align:center}
+@media(max-width:640px){
+h1{font-size:1.4rem}
+.gallery{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.overlay-text{font-size:1rem}
+.overlay-timer{font-size:2rem}
+}
+</style>
+</head>
+<body>
+${generateHTML()}
+<script>
+let unlocked={};
+function unlock(id,url){
+if(unlocked[id])return;
+const w=window.open(url,'_blank');
+if(!w){alert('Enable popups');return;}
+const msg=document.getElementById(id+'-msg');
+const timer=document.getElementById(id+'-timer');
+const overlay=document.getElementById(id+'-overlay');
+const thumb=document.getElementById(id+'-thumb');
+msg.textContent='Wait 7 seconds...';
+timer.style.display='block';
+let c=7;
+timer.textContent=c;
+const iv=setInterval(()=>{
+c--;
+if(c>0){
+timer.textContent=c;
+}else{
+clearInterval(iv);
+overlay.classList.add('hidden');
+if(thumb)thumb.style.display='none';
+unlocked[id]=true;
+}
+},1000);
+}
+<\/script>
+</body>
+</html>`;
+        }
+
+        function previewWithRedirect() {
+            showRedirectAndExecute(() => {
+                preview();
+            });
+        }
+
+        function preview() {
+            if (savedPosts.length === 0) {
+                showToast('No posts to preview', 'error');
+                return;
+            }
+            document.getElementById('previewArea').innerHTML = generateHTML();
+            showToast('Preview updated', 'success');
+        }
+
+        function downloadWithRedirect() {
+            showRedirectAndExecute(() => {
+                download();
+            });
+        }
+
+        function download() {
+            if (savedPosts.length === 0) {
+                showToast('No posts to download', 'error');
+                return;
+            }
+            const html = getFinalHTML();
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `vidforge_${Date.now()}.html`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('Downloaded successfully!', 'success');
+        }
+
+        function copyHTMLWithRedirect() {
+            showRedirectAndExecute(() => {
+                copyHTML();
+            });
+        }
+
+        function copyHTML() {
+            if (savedPosts.length === 0) {
+                showToast('No posts to copy', 'error');
+                return;
+            }
+            navigator.clipboard.writeText(getFinalHTML()).then(() => {
+                showToast('HTML copied to clipboard!', 'success');
+            });
+        }
+
+        function showToast(msg, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.className = 'toast show ' + type;
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        // Modal Functions
+        function showModal(type) {
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+
+            const content = {
+                guide: {
+                    title: '📖 Complete User Guide',
+                    body: `
+                        <h3>Understanding Dual Earning System</h3>
+                        <p style="background: #f0fdf4; border-left: 4px solid #10b981; padding: 12px; margin-bottom: 16px;">
+                            <strong>Two Separate Earning Streams:</strong><br>
+                            1️⃣ <strong>Tool Owner Earning:</strong> When you use this tool (Save/Preview/Download), a brief redirect happens. This supports the free tool.<br>
+                            2️⃣ <strong>Your Earning:</strong> The ad codes YOU configure and redirect URLs YOU set will appear in the posts YOU create. When viewers interact with YOUR posts, YOU earn!
+                        </p>
+
+                        <h3>How to Use MultiPostMaestro</h3>
+
+                        <div class="guide-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Configure YOUR Ad Slots</h4>
+                                <p>Go to "Ads" tab and replace demo ads with YOUR own ad codes (AdSense, PropellerAds, etc.). These ads will appear in YOUR generated posts for YOUR monetization.</p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Enter YOUR Post Details</h4>
+                                <p>Add a post title (optional) and YOUR redirect URL (required). This redirect URL is for YOUR earning - viewers will visit it when unlocking videos in YOUR posts.</p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Upload Images (Optional)</h4>
+                                <p>Upload gallery images with optional titles.</p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Add Videos</h4>
+                                <p>Paste video URL from any supported platform, add custom thumbnail and details.</p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Save Your Post</h4>
+                                <p>Click "Save Post" - a brief redirect opens (this is the tool owner's earning for providing free service), then your post saves. This is separate from YOUR earning in the generated posts!</p>
+                            </div>
+                        </div>
+
+                        <div class="guide-step">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <h4>Export Your Posts</h4>
+                                <p>Go to "Export" tab to preview, download or copy your HTML code.</p>
+                            </div>
+                        </div>
+
+                        <h3>Where to Use Your Posts</h3>
+                        <ul>
+                            <li><strong>Blogger/Blogspot:</strong> Paste HTML in "HTML view" mode</li>
+                            <li><strong>WordPress:</strong> Use "Custom HTML" block or "Text" editor</li>
+                            <li><strong>Wix:</strong> Use "HTML iframe" or "Embed Code" element</li>
+                            <li><strong>Weebly:</strong> Use "Embed Code" element</li>
+                            <li><strong>Medium:</strong> Not recommended (limited HTML support)</li>
+                            <li><strong>Static Websites:</strong> Paste directly into HTML files</li>
+                        </ul>
+
+                        <h3>Supported Platforms</h3>
+                        <ul>
+                            <li>✅ YouTube (full support)</li>
+                            <li>✅ Instagram (Posts, Reels, IGTV)</li>
+                            <li>✅ TikTok</li>
+                            <li>✅ Facebook</li>
+                            <li>✅ Twitter/X</li>
+                            <li>✅ Rumble</li>
+                            <li>✅ Vimeo</li>
+                            <li>✅ Dailymotion</li>
+                            <li>✅ Streamable</li>
+                            <li>✅ LinkedIn</li>
+                            <li>✅ Twitch</li>
+                        </ul>
+
+                        <h3>YOUR Monetization Features (In Generated Posts)</h3>
+                        <ul>
+                            <li>4 Ad placement slots (Top, Sidebar, In-Content, Bottom) - Add YOUR ad codes</li>
+                            <li>Redirect URL system - Set YOUR website URL for viewers to visit</li>
+                            <li>Video unlock system with 7-second timer - Viewers visit YOUR URL to unlock</li>
+                            <li>Image click-through - All images link to YOUR redirect URL</li>
+                        </ul>
+
+                        <h3>Tool Owner Monetization (Separate System)</h3>
+                        <ul>
+                            <li>Brief redirect when you Save/Preview/Download posts (supports free tool development)</li>
+                            <li>This does NOT affect YOUR earnings from the posts you create</li>
+                            <li>Two completely separate earning streams</li>
+                        </ul>
+
+                        <h3>Tips for Best Results</h3>
+                        <ul>
+                            <li>Use high-quality thumbnails for better engagement</li>
+                            <li>Write compelling video descriptions</li>
+                            <li>Test posts on different devices before publishing</li>
+                            <li>Keep redirect URLs short and clean</li>
+                            <li>Monitor your ad performance regularly</li>
+                        </ul>
+                    `
+                },
+                about: {
+                    title: 'ℹ️ About MultiPostMaestro',
+                    body: `
+                        <p>MultiPostMaestro is a powerful, free tool for content creators to build professional multi-platform video posts with built-in monetization features.</p>
+
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Support for 11+ video platforms</li>
+                            <li>4 customizable ad placement slots</li>
+                            <li>Monetization-ready with redirect system</li>
+                            <li>SEO-optimized HTML output</li>
+                            <li>Mobile & desktop responsive design</li>
+                            <li>No registration required</li>
+                            <li>100% free to use</li>
+                            <li>Privacy-focused (all data stays in your browser)</li>
+                        </ul>
+
+                        <h3>Perfect For</h3>
+                        <ul>
+                            <li>Bloggers on Blogger, WordPress, etc.</li>
+                            <li>Content creators and influencers</li>
+                            <li>Website owners looking to embed videos</li>
+                            <li>Social media marketers</li>
+                            <li>Anyone wanting to monetize video content</li>
+                        </ul>
+
+                        <h3>How It Works</h3>
+                        <p>MultiPostMaestro creates clean, lightweight HTML code that you can paste directly into your blog posts. The generated code includes:</p>
+                        <ul>
+                            <li>Embedded videos with unlock mechanism</li>
+                            <li>Your ad codes in strategic positions</li>
+                            <li>Redirect URLs for monetization</li>
+                            <li>Responsive design that works everywhere</li>
+                        </ul>
+
+                        <h3>Version</h3>
+                        <p>MultiPostMaestro v1.0 - Built for Content Creators</p>
+
+                        <h3>Technology</h3>
+                        <p>Built with modern web standards: HTML5, CSS3, and vanilla JavaScript. No external dependencies required.</p>
+                    `
+                },
+                privacy: {
+                    title: '🔒 Privacy Policy',
+                    body: `
+                        <p><strong>Last Updated:</strong> ${new Date().toLocaleDateString()}</p>
+
+                        <h3>Data Collection</h3>
+                        <p>MultiPostMaestro does NOT collect, store, or transmit any personal data. All processing happens locally in your browser.</p>
+
+                        <h3>Local Storage</h3>
+                        <p>Your posts and settings are stored locally in your browser's memory and are never uploaded to any server.</p>
+
+                        <h3>Third-Party Embeds</h3>
+                        <p>When you embed videos from platforms like YouTube, Instagram, etc., those platforms may collect data according to their privacy policies. We are not responsible for their data practices.</p>
+
+                        <h3>Cookies</h3>
+                        <p>We don't use any cookies or tracking technologies.</p>
+
+                        <h3>Your Rights</h3>
+                        <p>You have complete control over your data. Clear your browser data anytime to remove all stored information.</p>
+
+                        <h3>Ad Codes</h3>
+                        <p>Any ad codes you add are your responsibility. Ensure they comply with applicable laws and platform policies.</p>
+
+                        <h3>Contact</h3>
+                        <p>For privacy concerns, please contact us through the Contact page.</p>
+                    `
+                },
+                terms: {
+                    title: '📜 Terms of Service',
+                    body: `
+                        <p><strong>Effective Date:</strong> ${new Date().toLocaleDateString()}</p>
+
+                        <h3>Acceptance</h3>
+                        <p>By using MultiPostMaestro, you agree to these terms.</p>
+
+                        <h3>Permitted Use</h3>
+                        <p>You may use this tool for personal or commercial purposes to create video posts.</p>
+
+                        <h3>Content Ownership</h3>
+                        <p>You retain full ownership of all content you create. We claim no rights to your creations.</p>
+
+                        <h3>Prohibited Activities</h3>
+                        <ul>
+                            <li>Creating illegal or harmful content</li>
+                            <li>Violating copyright or intellectual property rights</li>
+                            <li>Distributing malware or malicious code</li>
+                            <li>Spamming or fraudulent activities</li>
+                            <li>Violating platform terms of service</li>
+                        </ul>
+
+                        <h3>Third-Party Compliance</h3>
+                        <p>When embedding content from third-party platforms, you must comply with their Terms of Service.</p>
+
+                        <h3>Ad Responsibility</h3>
+                        <p>You are solely responsible for any advertisements you add. Ensure they comply with all applicable laws and regulations.</p>
+
+                        <h3>Monetization</h3>
+                        <p>The redirect and monetization features are provided as-is. We are not responsible for your earnings or losses.</p>
+
+                        <h3>Disclaimer</h3>
+                        <p>This service is provided "AS IS" without warranties of any kind. We are not liable for any damages arising from use of this service.</p>
+
+                        <h3>Changes to Terms</h3>
+                        <p>We reserve the right to modify these terms at any time. Continued use constitutes acceptance of updated terms.</p>
+                    `
+                },
+                contact: {
+                    title: '📧 Contact Us',
+                    body: `
+                        <h3>Get in Touch</h3>
+                        <p>We'd love to hear from you! Whether you have questions, feedback, or need support.</p>
+
+                        <h3>Support</h3>
+                        <p>📧 Email: support@vidforge.studio<br>
+                        ⏰ Response: 24-48 hours</p>
+
+                        <h3>Business Inquiries</h3>
+                        <p>📧 Email: business@vidforge.studio</p>
+
+                        <h3>Bug Reports & Feature Requests</h3>
+                        <p>📧 Email: feedback@vidforge.studio</p>
+
+                        <h3>Follow Us</h3>
+                        <p>Stay updated with latest features and tips:<br>
+                        🐦 Twitter: @VidForge<br>
+                        📘 Facebook: /VidForgeStudio<br>
+                        📷 Instagram: @vidforgestudio</p>
+
+                        <h3>Need Help?</h3>
+                        <p>Check our User Guide first (click 📖 icon in header) for detailed instructions on using MultiPostMaestro.</p>
+                    `
+                }
+            };
+
+            const data = content[type];
+            if (data) {
+                title.textContent = data.title;
+                body.innerHTML = data.body;
+                modal.classList.add('show');
+            }
+        }
+
+        function closeModal(e) {
+            if (!e || e.target.id === 'modal') {
+                document.getElementById('modal').classList.remove('show');
+            }
+        }
+
+        // Keyboard shortcut
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Initialize
+        renderImages();
+        renderVideos();
+        renderSavedPosts();
+    </script>
+</body>
+</html>
