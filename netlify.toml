@@ -1,0 +1,15 @@
+[build]
+publish = "."  # agar tera publish folder alag hai to change kar de jaise "dist"
+
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+  [plugins.inputs]
+  baseUrl = "https://multipostmaestro.netlify.app"
+  include = ["**/*.html"]  # saare html files add honge sitemap mein
+
+[[plugins]]
+package = "netlify-plugin-submit-sitemap"
+  [plugins.inputs]
+  baseUrl = "https://multipostmaestro.netlify.app"
+  sitemapPath = "/sitemap.xml"
+  providers = ["google"]  # sirf google ko ping karega har deploy pe
